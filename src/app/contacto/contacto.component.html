@@ -1,0 +1,13 @@
+<form #ContactForm="ngForm" (ngSubmit)="onSubmit(ContactForm)">
+  <input type="text"
+         placeholder="nombre"
+         #name="ngModel"
+         name="name"
+         [(ngModel)]="usuario.name"
+         required
+  >
+  <br>
+  <input type="text" name="job" placeholder="job" [(ngModel)]="usuario.job">
+  <br>
+  <input type="submit" value="enviar" [disabled]="!ContactForm.form.valid">
+</form>
